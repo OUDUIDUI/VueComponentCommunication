@@ -5,13 +5,21 @@
             <span class="text-bold">text：</span>
             {{text}}
         </div>
+        <button @click="addGrandParentCount">
+            add count of Component3.vue
+        </button>
     </div>
 </template>
 
 <script>
 export default {
     name: "Component5",
-    inject:['text'],
+    inject:['text','component3'],
+    methods:{
+        addGrandParentCount(){
+            this.component3.addCount();
+        }
+    }
 }
 </script>
 

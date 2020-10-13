@@ -30,7 +30,7 @@ export default {
         }
     },
     mounted(){
-        this.$EventBus.$on('changeCount',(count)=> this.count = count);
+        this.$EventBus.$on('changeCount',(value)=> this.count = value);
     },
     methods:{
         addCount(){

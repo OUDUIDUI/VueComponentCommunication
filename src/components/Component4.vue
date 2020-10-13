@@ -6,6 +6,10 @@
             {{text}}
         </div>
         <div>
+            <span class="text-bold">text：</span>
+            {{text2}}
+        </div>
+        <div>
             <span class="text-bold">count：</span>
             {{count}}
         </div>
@@ -25,12 +29,15 @@ export default {
     inject:['text'],
     data() {
         return {
+            text1: 'Text From Component4.vue',
+            text2:'',
             count: 0,
             value:''
         }
     },
     mounted() {
-        this.$on('addCount',() => this.count++)
+        this.$on('addCount',() => this.count++);
+        this.text2 = this.$parent.text1;
     },
     methods:{
         changeParentCount(){
